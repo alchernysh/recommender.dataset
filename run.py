@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 import argparse
 from src.link_parser import parse_links
-
+from src.article_parser import parse_articles
 
 commands = {
     'parse_links': parse_links,
+    'parse_articles': parse_articles,
 }
 
 

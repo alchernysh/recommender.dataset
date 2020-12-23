@@ -53,7 +53,7 @@ class Parser:
         proxy = self._proxies[random.randrange(0, len(self._proxies))]
         return ProxyConnector.from_url(f"{proxy['protocol']}://{proxy['ip']}:{proxy['port']}")
 
-    async def parse_page(self, url, xpath, use_proxy=True):
+    async def parse_page(self, url, xpaths, use_proxy=True):
         html = None
         while not html:
             try:
@@ -62,7 +62,11 @@ class Parser:
                     async with session.get(url, headers=self._get_user_agent()) as response:
                         response.raise_for_status()
                         html = await response.text()
-            # except BaseException as e:
-            except:                
-                await asyncio.sleep(1)
-        return parse_html(html, xpath)
+            except (UnicodeDecodeError, ClientResponseError):
+                return None
+            except BaseException:
+                await asyncio.sleep(4)
+        results = list()
+        for xpath in xpaths:
+            results.append(parse_html(html, xpath))
+        return results
