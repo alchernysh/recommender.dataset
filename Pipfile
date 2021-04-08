@@ -13,6 +13,8 @@ aiohttp-socks = "*"
 requests = "*"
 redis = "*"
 aioredis = "*"
+gensim = "*"
+nltk = "*"
 
 [requires]
 python_version = "3.8"
