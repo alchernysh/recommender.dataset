@@ -13,8 +13,9 @@ aiohttp-socks = "*"
 requests = "*"
 redis = "*"
 aioredis = "*"
-gensim = "*"
+gensim = "==3.8.3"
 nltk = "*"
+deep-translator = "*"
 
 [requires]
 python_version = "3.8"
