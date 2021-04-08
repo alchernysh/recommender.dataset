@@ -77,5 +77,8 @@ venv.bak/
 # Emacs project settings
 .ropeproject
 .projectile
+.ob-jupyter
 
 # Current project
+/data/
+/resources/
