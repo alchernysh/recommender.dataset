@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-import concurrent
 import json
+import concurrent
 from pathlib import Path
 
 from tqdm import tqdm
@@ -26,6 +26,7 @@ def translate_element(el):
     )
     return el
 
+
 def translate_tags():
     desc_file = Path('data/desc.json')
 
@@ -33,7 +34,7 @@ def translate_tags():
         dataset = json.load(f)
 
     new_dataset = list()
-    with concurrent.futures.ThreadPoolExecutor() as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         new_dataset = list(tqdm(executor.map(translate_element, dataset), total=len(dataset)))
 
     with desc_file.open(mode='w') as f:
