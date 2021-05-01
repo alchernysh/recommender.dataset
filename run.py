@@ -5,12 +5,14 @@ from src.link_parser import parse_links
 from src.article_parser import parse_articles
 from src.similarity_calculator import calculate_similarity
 from src.translator import translate_tags
+from src.data_filter import filter_data
 
 commands = {
     'parse_links': parse_links,
     'parse_articles': parse_articles,
     'translate_tags': translate_tags,
     'calculate_similarity': calculate_similarity,
+    'filter_data': filter_data,
 }
 
 

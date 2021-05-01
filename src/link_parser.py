@@ -30,6 +30,7 @@ async def run():
         article_links = {item for sublist in article_links for item in sublist}
         r.sadd(f'links.{site}', *article_links)
 
+
 def parse_links():
     loop = asyncio.get_event_loop()
     loop.run_until_complete(run())
