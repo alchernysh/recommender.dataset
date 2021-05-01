@@ -11,8 +11,8 @@ commands = {
     'parse_links': parse_links,
     'parse_articles': parse_articles,
     'translate_tags': translate_tags,
-    'calculate_similarity': calculate_similarity,
     'filter_data': filter_data,
+    'calculate_similarity': calculate_similarity,
 }
 
 

@@ -7,7 +7,7 @@ from pathlib import Path
 
 
 def split_dataset():
-    description_path = Path('data/desc.json')
+    description_path = Path('data/desc_filtered.json')
 
     with description_path.open(mode='r') as f:
         dataset = json.load(f)
